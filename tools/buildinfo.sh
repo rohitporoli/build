@@ -63,6 +63,9 @@ if [ "$TARGET_UNIFIED_DEVICE" == "" ] ; then
     echo "ro.build.thumbprint=$BUILD_THUMBPRINT"
   fi
 fi
+if [ -n "$DEVICE_MAINTAINERS" ] ; then
+  echo "ro.cardinal.maintainer=$DEVICE_MAINTAINERS"
+fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
 echo "ro.cardinal.device=$CARDINAL_DEVICE"
