@@ -1915,9 +1915,9 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 
 CARDINAL_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CARDINAL_MOD_VERSION).zip
 
-.PHONY: otapackage bacon bootzip
+.PHONY: otapackage cardinal bootzip
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
-bacon: otapackage
+cardinal: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CARDINAL_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CARDINAL_TARGET_PACKAGE) > $(CARDINAL_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}"Package Complete: $(CARDINAL_TARGET_PACKAGE)"${CL_RST}
