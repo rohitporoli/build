@@ -19,6 +19,11 @@
 # build of the emulator, but all those aspects can be overridden
 # in inherited configurations.
 
+  # Additional settings used in all AOSP builds
+ PRODUCT_PROPERTY_OVERRIDES := \
+   ro.config.ringtone=Titania.ogg \
+   ro.config.notification_sound=Tethys.ogg
+ 
 PRODUCT_PACKAGES := \
     libfwdlockengine \
     WAPPushManager
