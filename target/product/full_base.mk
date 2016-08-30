@@ -19,6 +19,11 @@
 # build of the emulator, but all those aspects can be overridden
 # in inherited configurations.
 
+ # Additional settings used in all AOSP builds
+ PRODUCT_PROPERTY_OVERRIDES := \
+    ro.config.ringtone=Titania.ogg \
+    ro.config.notification_sound=Tethys.ogg
+ 
 PRODUCT_PACKAGES := \
     libfwdlockengine \
     OpenWnn \
@@ -46,7 +51,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_LOCALES := en_US
 
 # Get some sounds
-$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+$(call inherit-product-if-exists, vendor/cardinal/prebuilt/common/media/MaterialSounds/GoogleAudio.mk) 
 
 # Get the TTS language packs
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
