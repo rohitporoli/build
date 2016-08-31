@@ -21,7 +21,7 @@
 
  # Additional settings used in all AOSP builds
  PRODUCT_PROPERTY_OVERRIDES := \
-    ro.config.ringtone=Titania.ogg \
+    ro.config.ringtone=Triton.ogg \
     ro.config.notification_sound=Tethys.ogg
  
 PRODUCT_PACKAGES := \
