@@ -42,11 +42,11 @@ except ImportError:
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
-custom_local_manifest = ".repo/local_manifests/slim_manifest.xml"
-custom_default_revision = "ng7.0"
-custom_dependencies = "slim.dependencies"
-org_manifest = "SlimRoms"  # leave empty if org is provided in manifest
-org_display = "SlimRoms"  # needed for displaying
+custom_local_manifest = ".repo/local_manifests/cardinal_manifest.xml"
+custom_default_revision = "n7"
+custom_dependencies = "cardinal.dependencies"
+org_manifest = "Cardinal-AOSP"  # leave empty if org is provided in manifest
+org_display = "Cardinal-AOSP"  # needed for displaying
 
 github_auth = None
 
