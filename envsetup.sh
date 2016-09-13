@@ -570,7 +570,7 @@ function print_lunch_menu()
     done | column
 
     if [ "z${CARDINAL_DEVICES_ONLY}" != "z" ]; then
-       echo "... and don't forget the bacon!"
+       echo "... and don't forget the cardinal!"
     fi
 
     echo
@@ -580,7 +580,7 @@ function brunch()
 {
     breakfast $*
     if [ $? -eq 0 ]; then
-        mka bacon
+        mka cardinal
     else
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
@@ -1858,7 +1858,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                bacon|otapackage|systemimage)
+                cardinal|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
@@ -2253,6 +2253,7 @@ fi
 for f in `test -d device && find -L device -maxdepth 4 -name 'vendorsetup.sh' ! -path '*/generic/*' 2> /dev/null | sort` \
          `test -d vendor && find -L vendor -maxdepth 4 -name 'vendorsetup.sh' 2> /dev/null | sort` \
          `test -d product && find -L product -maxdepth 4 -name 'vendorsetup.sh' 2> /dev/null | sort`
+do
     echo "including $f"
     . $f
 done
