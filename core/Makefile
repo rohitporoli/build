@@ -2150,7 +2150,7 @@ CARDINAL_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CARDINAL_MOD_VERSION).zip
 
 .PHONY: otapackage cardinal
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
-
+InitiateWings: cardinal
 cardinal: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CARDINAL_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CARDINAL_TARGET_PACKAGE) > $(CARDINAL_TARGET_PACKAGE).md5sum
