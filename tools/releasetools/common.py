@@ -1626,7 +1626,7 @@ class BlockDifference(object):
                          self._HashZeroBlocks(self.tgt.extended.size())))
       script.Print(" ")
       script.Print("Cardinal-AOSP System files verified.")
-        if partition == "system":
+      if partition == "system":
         code = ErrorCode.SYSTEM_NONZERO_CONTENTS
       else:
         code = ErrorCode.VENDOR_NONZERO_CONTENTS
