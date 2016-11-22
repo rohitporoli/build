@@ -734,8 +734,19 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     patch = GetBuildProp("ro.build.version.security_patch", OPTIONS.info_dict)
     crdv = GetBuildProp("ro.cardinal.version", OPTIONS.info_dict)
 
+  if GetBuildProp("ro.product.model", OPTIONS.info_dict) is not None:
+    model = GetBuildProp("ro.product.model", OPTIONS.info_dict)
     script.Print("***********************************************");
     script.Print("           Cardinal-AOSP for %s"%(model));
+    script.Print("     Cardinal Version: %s"%(crdv));
+    script.Print("     AOSP Version: %s"%(build));
+    script.Print("     Security Patch: %s"%(patch));
+    script.Print("     Compiled: %s"%(date));
+    script.Print("***********************************************");
+  else:
+    name = GetBuildProp("ro.product.name", OPTIONS.info_dict)
+    script.Print("***********************************************");
+    script.Print("           Cardinal-AOSP for %s"%(name));
     script.Print("     Cardinal Version: %s"%(crdv));
     script.Print("     AOSP Version: %s"%(build));
     script.Print("     Security Patch: %s"%(patch));
@@ -885,8 +896,8 @@ def GetBuildProp(prop, info_dict):
   try:
     return info_dict.get("build.prop", {})[prop]
   except KeyError:
-    raise common.ExternalError("couldn't find %s in build.prop" % (prop,))
-
+    print ("WARNING: could not find %s in build.prop" % (prop,))
+  return None
 
 def AddToKnownPaths(filename, known_paths):
   if filename[-1] == "/":
