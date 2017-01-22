@@ -2241,10 +2241,10 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
 
 CARDINAL_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CARDINAL_MOD_VERSION).zip
 
-.PHONY: otapackage cardinal
+.PHONY: otapackage wings
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 InitiateWings: cardinal
-cardinal: otapackage
+wings: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CARDINAL_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CARDINAL_TARGET_PACKAGE) > $(CARDINAL_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLD}${CL_CYN}"===============================-Package complete-==============================="${CL_RST}

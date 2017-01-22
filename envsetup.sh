@@ -571,7 +571,7 @@ function print_lunch_menu()
     done | column
 
     if [ "z${CARDINAL_DEVICES_ONLY}" != "z" ]; then
-       echo "... and don't forget the cardinal!"
+       echo "... and don't forget the wings!"
     fi
 
     echo
@@ -581,7 +581,7 @@ function brunch()
 {
     breakfast $*
     if [ $? -eq 0 ]; then
-        mka cardinal
+        mka wings
     else
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
@@ -1871,7 +1871,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                cardinal|otapackage|systemimage)
+                wings|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
