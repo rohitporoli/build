@@ -730,7 +730,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
     build = GetBuildProp("ro.build.version.release", OPTIONS.info_dict)
     date = GetBuildProp("ro.build.date", OPTIONS.info_dict)
-    model = GetBuildProp("ro.product.model", OPTIONS.info_dict)
     patch = GetBuildProp("ro.build.version.security_patch", OPTIONS.info_dict)
     crdv = GetBuildProp("ro.cardinal.version", OPTIONS.info_dict)
 
@@ -744,7 +743,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print("     Compiled: %s"%(date));
     script.Print("***********************************************");
   else:
-    name = GetBuildProp("ro.product.name", OPTIONS.info_dict)
+    name = GetBuildProp("ro.cardinal.device", OPTIONS.info_dict)
     script.Print("***********************************************");
     script.Print("           Cardinal-AOSP for %s"%(name));
     script.Print("     Cardinal Version: %s"%(crdv));
