@@ -2259,6 +2259,7 @@ CARDINAL_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CARDINAL_MOD_VERSION).zip
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
+wings: bacon
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CARDINAL_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CARDINAL_TARGET_PACKAGE) > $(CARDINAL_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLU}${CL_CYN}"===============================-Package complete-==============================="${CL_RST}
