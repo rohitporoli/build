@@ -482,9 +482,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   # Dump fingerprints
   #script.Print("Target: %s" % target_fp)
-  script.Print("***********************")
-  script.Print("   * Cardinal-AOSP *   ")
-  script.Print("***********************")
+    script.Print(" ");
+    script.Print("        ::::::::  :::::::::  :::::::::");
+    script.Print("       :+:    :+: :+:    :+: :+:    :+:");
+    script.Print("       +:+        +:+    +:+ +:+     +:+");
+    script.Print("       +#+        +#++:++#:  +#+     +:+");
+    script.Print("       +#+        +#+    +#+ +#+     +#+");
+    script.Print("       #+#    #+# #+#    #+# #+#    #+#");
+    script.Print("        ########  ###    ### #########");
+    script.Print(" ");
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
