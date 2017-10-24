@@ -21,8 +21,8 @@
 
  # Additional settings used in all AOSP builds
  PRODUCT_PROPERTY_OVERRIDES := \
-    ro.config.ringtone=Zen.ogg \
-    ro.config.notification_sound=Chime.ogg
+    ro.config.ringtone=The_big_adventure.ogg \
+    ro.config.notification_sound=Popcorn.ogg
 
 PRODUCT_PACKAGES := \
     libfwdlockengine \
@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_LOCALES := en_US
 
 # Get some sounds
-$(call inherit-product-if-exists, vendor/cardinal/prebuilt/common/media/MaterialSounds/GoogleAudio.mk) 
+$(call inherit-product-if-exists, vendor/cardinal/google/sounds/PixelSounds.mk)
 
 # Get the TTS language packs
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
