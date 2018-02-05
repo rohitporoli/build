@@ -26,9 +26,9 @@ csv_to_json_list = $(call _json_list,$(comma),$(1))
 
 # Create soong.variables with copies of makefile settings.  Runs every build,
 # but only updates soong.variables if it changes
-SOONG_VARIABLES_TMP := $(SOONG_VARIABLES).$$$$
-$(SOONG_VARIABLES): FORCE
-	$(hide) mkdir -p $(dir $@)
+SOONG_VARIABLES_TMP := $(shell mktemp -u)
+include vendor/cardinal/build/soong/soong_config.mk
+$(SOONG_VARIABLES): FORCE cardinal_soong
 	$(hide) (\
 	echo '{'; \
 	echo '    "Make_suffix": "-$(TARGET_PRODUCT)",'; \
